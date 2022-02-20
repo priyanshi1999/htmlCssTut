@@ -131,7 +131,13 @@ section{
 .featuresList{
     color: white;
     line-height: 2.5em;
-    text-align: center;
+    /* Next two lines are related to responsivenss, which was done at the end.
+    These two lines, agr hm web page chhota kre to sare features ek ke niche ek ayenge,
+    jaise jaise bda krte jayenge webpage, aur jaise jaise jagah milti jayegi waise waise wo
+    webpage pe spread ho jayenge. Matlab according to the space available, wo spread in aur out honge
+    inn do lines ki help se */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
 }
 .holdingPhnClass{
     display: none;
@@ -191,4 +197,114 @@ input, textarea{
 iframe{
     width: 100%;
     height: 300px;
+}
+
+/* FOR RESPONSIVENESS (DONE AT LAST) */
+@media only screen and (min-width:768px) {
+    .mobileMenu, .mobileMenuExit{
+        display: none;
+    }
+    .containerNav{
+        display: grid;
+        grid-template-columns: 180px auto;
+        /* containerNav contains 3 things- anchor for rememberThat, img for mobileMenu, and 
+        nav which consists all options. Here img for mobileMenu is already hidden (display: none),
+        Remaining are two- anchor for rememberThat and nav. So rememberThat will take 180px, rest options
+        inside nav will take space according to 'auto' */
+        justify-content: unset;
+    }
+    nav{
+        display: flex;
+        justify-content: space-between;
+        background: none;
+        position: unset;
+        height: auto;
+        width: 100%;
+        padding: 0;
+    }
+    .leftNav, .rightNav{
+        display: flex;
+        margin: 0;
+    }
+    .anchorFeature{
+        color: black;
+        padding: 0.1em 1em;
+    }
+    .goPremiumButton{
+        background: white;
+        border-radius: 2em;
+        border: 2px solid var(--primary-color);
+        padding: 0.2em, 1em;
+        font-weight: bold;
+    }
+    .goPrem{
+        color: var(--primary-color);
+    }
+}
+
+@media only screen and (min-width:1080px){
+    /* agar 1080 ya usse zada screen size ho rha hai toh hum containerHero ko do hisso mein
+    baat sakte hai. Left-Right. Left mein nittyGritty wala part ayega aur right mein wo img- illustration wali */
+    .containerHero{
+        width: 1080px;
+        margin: 0 auto;
+        /* Above two lines of code will basically center everything.
+        This is a way to have centered container basically. */
+        display: flex;
+        /* Above line will keep it side by side (left-right) */
+        justify-content: space-between;
+        text-align: left;
+        /* text-align: left will make nittyGritty wala text all aligned to left */        
+    }
+    .leftPartHero{
+        margin: 3em 3em 0 5em;
+    }
+    .rightSideHero{
+        margin-right: 8em;
+    }
+    .heroTwoButtons{
+        display: flex;
+    }
+    .tryforfree{
+        margin-right: 2em;
+    }
+    .featuresList{
+        display: block;
+        margin-left: 7em;
+    }
+    .featuresSection{
+        position:relative;
+    }
+    .holdingPhnClass{
+        display: block;
+        /* display:block will make the image sit just below the list of features.
+        However, we want it to be on right side, so below- */
+        position: absolute;
+        right: 0;
+        width: 20%;
+        bottom: -3em;
+    }
+    .reviewUnList{
+        display: flex;
+    }
+    .reviewListItem{
+        margin: 1.5em;
+    }
+    .containerContact{
+        position: relative;
+        display: flex;
+    }
+    .contactLeft{
+        margin-left: 2em;
+    }
+    .contactRight{
+        position: absolute;
+        right: 0;
+         /* top: 0;  */
+        width: 45%;
+        height: 100%;  
+    }
+    iframe{
+        height: 100%;
+    }
 }
