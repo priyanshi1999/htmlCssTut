@@ -20,13 +20,13 @@
             <nav>
                 <img id="mobileIdExit" class="mobileMenuExit" src="images/exit.svg" alt="exitIcon">
                 <ul class="leftNav">
-                    <li class="boldHome"> <a href="#">Home</a> </li>
-                    <li> <a href="#">Features</a> </li>
-                    <li> <a href="#">Pricing</a> </li>
+                    <li class="boldHome"> <a class="anchorFeature" href="#">Home</a> </li>
+                    <li> <a class="anchorFeature" href="#">Features</a> </li>
+                    <li> <a class="anchorFeature" href="#">Pricing</a> </li>
                 </ul>
                 <ul class="rightNav">
-                    <li> <a href="#">Contact</a> </li>
-                    <li class="goPremiumButton"> <a href="#">Go Premium</a> </li>
+                    <li> <a class="anchorFeature" href="#">Contact</a> </li>
+                    <li class="goPremiumButton"> <a class="anchorFeature" href="#">Go Premium</a> </li>
                 </ul>
             </nav>
         </div>
@@ -108,6 +108,18 @@
             </div>
         </div>
     </section>
+    <script>
+        const mobileMenu= document.getElementById("mobileId")
+            nav= document.querySelector("nav")
+            mobileMenuExit= document.getElementById("mobileIdExit");
+        mobileMenu.addEventListener("click", () =>{
+            nav.classList.add("mobileMenu");
+        }); //we have defined nav.mobileMenu in css as display:block. This means that on clicking mobile menu button
+        //that(display:block) will get execute.
+        mobileMenuExit.addEventListener("click", () =>{
+            nav.classList.remove("mobileMenu");
+        }); //nav.mobileMenu in css is defined as display:block. This will remove that.
+    </script>
 </body>
 
 </html>

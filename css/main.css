@@ -27,6 +27,42 @@ nav{
     display: none;
     /* will hide home, features, pricing, contact, go premium (for phones) */
 }
+nav.mobileMenu{
+    display: block;
+}
+nav{
+    position: fixed;
+    z-index: 999;
+    /* 999 is a high value for z-index because we want it to be sitting
+    on top of everything (ye menu ke contents har wqt jab wo khule
+    to upr ane chahie) */
+    width: 66%;
+    /* when the menu will open, it will take 66% of screen */
+    right: 0;
+    top: 0;
+    background: #20272E;
+    height: 100vh;
+    /* height of 100vh means it will take up the height of the device */
+    padding: 1em;
+}
+
+.leftNav{
+    margin-top: 4em;
+}
+
+.anchorFeature{
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 0.5em;
+    text-align: right;
+}
+
+.mobileMenuExit{
+    float: right;
+    cursor: pointer;
+    margin: 0.5em;
+}
 
 .containerNav{
     display: flex; 
